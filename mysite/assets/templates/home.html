@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <style>
+        h1 {
+            font-size: 100px;
+        }
+        .a{
+            font-family: Georgia, 'Times New Roman', Times, serif ;
+            text-align: center;
+             
+        }
+        .b{
+            background-image: url('{% static "images/monkeyBG.webp" %}');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .c{
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+<h1 class = "a"> Monkey Species Classifier</h1>
+</head>
+<body class="b">
+<div class='c'>
+<p>
+{{prediction}}
+<br>
+{{ testvar }}
+</p>
+<form method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!--<input type="file" id="imgBut" name="sentFile">-->
+    {%if request.method == 'GET'%}
+    <input type="submit" value="classify">
+    {% endif %}
+</form>
+</div>
+</body>
