@@ -49,8 +49,8 @@ threadpoolctl==2.1.0
 torch==1.7.0
 torchvision==0.8.1
 tqdm==4.51.0
-traitlets==5.0.5
-typing-extensions==3.7.4.3
+traitlets
+typing-extensions
 urllib3==1.25.11
 wasabi==0.8.0
 wcwidth==0.2.5
